@@ -1577,13 +1577,13 @@ where
                 self.last_peer_activity.remove(&remote_peer_identity);
                 drop(worker_tx);
 
-                tracing::warn!(
-                    "Tx worker for remote peer: {:?} completed, err: {:?}, canceled: {}, evicted: {}",
-                    remote_peer_identity,
-                    worker_completed.err,
-                    worker_completed.canceled,
-                    is_evicted_conn
-                );
+                // tracing::warn!(
+                //     "Tx worker for remote peer: {:?} completed, err: {:?}, canceled: {}, evicted: {}",
+                //     remote_peer_identity,
+                //     worker_completed.err,
+                //     worker_completed.canceled,
+                //     is_evicted_conn
+                // );
 
                 // It's possible that the worker failed while having pending transactions.
                 // We need to "rescue" those transactions if any and if the worker didn't fail due to fatal errors.
