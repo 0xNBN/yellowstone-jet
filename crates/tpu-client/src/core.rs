@@ -732,14 +732,14 @@ where
                         prom::incr_quic_gw_worker_tx_process_cnt(self.remote_peer, "error");
                     }
 
-                    tracing::warn!(
-                        "Giving up sending transaction to remote peer: {}, client identity: {}, after {} attempts, {} txn sent so far: {:?}",
-                        self.remote_peer,
-                        self.current_client_identity,
-                        attempt,
-                        self.txn_sent,
-                        e
-                    );
+                    // tracing::warn!(
+                    //     "Giving up sending transaction to remote peer: {}, client identity: {}, after {} attempts, {} txn sent so far: {:?}",
+                    //     self.remote_peer,
+                    //     self.current_client_identity,
+                    //     attempt,
+                    //     self.txn_sent,
+                    //     e
+                    // );
                     let resp = TxFailed {
                         remote_peer_identity: self.remote_peer,
                         remote_peer_addr: self.connection.remote_address(),
